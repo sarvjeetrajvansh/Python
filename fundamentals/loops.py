@@ -26,3 +26,9 @@ print(ord(inp_char))
 print()
 inp_num= int(input("Enter a num : "))
 print(chr(inp_num))
+
+i=1
+while i <= 10 : 
+    print("github",i)
+    i+=1
+    
