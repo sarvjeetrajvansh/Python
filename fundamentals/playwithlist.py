@@ -22,3 +22,17 @@ print()
 for i in range(3):
     pass  # pass the cursor
 
+def prefixsum(numbers):
+    # Write your code here.
+    result = []
+    sum = 0
+
+    for num in numbers:
+        sum += num
+        result.append(sum)
+
+
+    return result
+
+num_lst = [1,2,5,7,8]
+print(prefixsum(num_lst))
