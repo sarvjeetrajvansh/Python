@@ -1,27 +1,39 @@
+# Node class
 class Node:
-   def __init__(self, dataval=None):
-      self.dataval = dataval
-      self.nextval = None
 
-class SLinkedList:
-   def __init__(self):
-      self.headval = None
+	# Function to initialise the node object
+	def __init__(self, data):
+		self.data = data # Assign data
+		self.next = None # Initialize next as null
 
-   def listprint(self):
-      printval = self.headval
-      while printval is not None:
-         print (printval.dataval)
-         printval = printval.nextval
 
-list = SLinkedList()
-list.headval = Node("Mon")
-e2 = Node("Tue")
-e3 = Node("Wed")
+# Linked List class contains a Node object
+class LinkedList:
 
-# Link first Node to second node
-list.headval.nextval = e2
+	# Function to initialize head
+	def __init__(self):
+		self.head = None
 
-# Link second Node to third node
-e2.nextval = e3
+	# This function prints contents of linked list
+	# starting from head
+	def printList(self):
+		temp = self.head
+		while (temp):
+			print (temp.data)
+			temp = temp.next
 
-list.listprint()
+
+# Code execution starts here
+if __name__=='__main__':
+
+	# Start with the empty list
+	llist = LinkedList()
+
+	llist.head = Node(1)
+	second = Node(2)
+	third = Node(3)
+
+	llist.head.next = second; # Link first node with second
+	second.next = third; # Link second node with the third node
+
+	llist.printList()
