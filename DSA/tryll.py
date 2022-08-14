@@ -28,6 +28,8 @@ class LinkedList :
         while(temp):
             print(temp.data , end="->")
             temp=temp.next
+        print()
+        
     def lengthll(self):
         temp = self.head
         count = 0
@@ -46,24 +48,51 @@ class LinkedList :
             temp = temp.next
             index +=1
         print("Not Found !!")
+    
+    def insert_at_kth_position(self,data,k):
+        temp = self.head
+        count = 0
+        while(temp):
+            count += 1
+            if count == k :
+                print(f"Inserting {data} at {count} position ")
+                new_node = Node(data)
+                new_node.next = temp.next
+                temp.next = new_node
+                return
+            temp = temp.next
+            
+    def delete(self,k):
+        temp = self.head
+        count = 0 
+        while(temp):
+            count +=1
+            if count == k :
+                temp.next = temp.next.next
+                return
+            
         
 
 if __name__=='__main__':
     
     lla = LinkedList()
-    llb = LinkedList()
+    # llb = LinkedList()
     
     elements_in_ll = int(input("Enter No. of Elements in list :  "))
     i=0
     while( i < elements_in_ll):
         #data = int(input("Enter ListItems : "))
         lla.add_at_back(data=i+1)
-        llb.add_at_front(data=i+i)
+        # llb.add_at_front(data=i+i)
         i+=1
     lla.printll()
-    llb.printll()  
-    llb.lengthll()
+    # llb.printll()  
+    # llb.lengthll()
     lla.lengthll()
-    lla.search(1)
-    llb.search(10)
+    lla.search(7)
+    lla.insert_at_kth_position(78,2)
+    lla.printll()
+    lla.delete(5)
+    lla.printll()
+    # llb.search(10)
     
