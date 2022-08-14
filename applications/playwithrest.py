@@ -1,5 +1,4 @@
-from package import requester
-from package import appender , reader
+from package import requester , appender ,reader
 
 url = "https://jsonplaceholder.typicode.com/todos/1"
 
